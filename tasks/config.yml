@@ -8,7 +8,7 @@
 - name: config - setup log folder
   file:
     state=directory
-    path=/var/log/wordhost/
+    path=/var/log/nginx/wordhost/
     mode=755
 
 - name: config - www.wordhost.io
