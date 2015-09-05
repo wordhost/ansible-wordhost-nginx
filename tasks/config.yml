@@ -1,0 +1,20 @@
+---
+
+- name: config - setup local document root for site
+  file:
+    state=directory
+    path=/var/www/wordhost.io
+
+- name: config - setup log folder
+  file:
+    state=directory
+    path=/var/log/wordhost/
+    mode=755
+
+- name: config - www.wordhost.io
+  template:
+    src=www.wordhost.io.j2
+    dest=/etc/nginx/sites-enabled/www.wordhost.io
+  notify:
+    - reload nginx
+
